@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-angular.module("RecordLabelAngular").controller("ReleaseViewController",
+angular.module("RecordLabel").controller("ReleaseViewController",
     ["$scope", "$routeParams", "$sce", "releasesService", "resourceErrorHandler",
     function ReleaseViewController($scope, $routeParams, $sce, releasesService, resourceErrorHandler) {
 

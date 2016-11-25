@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var application = angular.module("RecordLabelAngular");
+var application = angular.module("RecordLabel");
 
 application.factory("metadataService", ["$resource", function ($resource) {
     return $resource("/api/Metadata/Get");

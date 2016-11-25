@@ -1,13 +1,8 @@
 ﻿"use strict";
 
-angular.module("RecordLabelAngular", ["ngRoute", "ngResource"])
+angular.module("RecordLabel", ["ngRoute", "ngResource"])
     .config(function ($routeProvider) {
-        $routeProvider
-        /*.when("/", {
-            templateUrl: "",
-            controller: ""
-        })*/
-        .when("/Release", {
+        $routeProvider.when("/Release", {
             templateUrl: "Angular/Templates/ReleaseList.html",
             controller: "ReleaseListController"
         })
@@ -25,6 +20,7 @@ angular.module("RecordLabelAngular", ["ngRoute", "ngResource"])
     })
     .run(["$rootScope", "metadataService", function ($rootScope, metadataService) {
         $rootScope.errors = [];
+
         // Populate global metadata list because we'll need it a lot
         $rootScope.metadataList = metadataService.query();
     }

@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-angular.module("RecordLabelAngular").controller("ReleaseEditController",
+angular.module("RecordLabel").controller("ReleaseEditController",
     ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService", "resourceErrorHandler",
     function ReleaseEditController($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler) {
 

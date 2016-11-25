@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-angular.module("RecordLabelAngular").controller("ReleaseListController",
+angular.module("RecordLabel").controller("ReleaseListController",
     ["$scope", "releasesService", "resourceErrorHandler",
     function ReleaseListController($scope, releasesService, resourceErrorHandler) {
         $scope.entries = resourceErrorHandler(releasesService.query());
