@@ -16,12 +16,6 @@ namespace AndrewD.RecordLabel.Web
                 model.References = model.References.Except(youtubeRefs).ToArray();
             }
 
-            foreach (var reference in youtubeRefs)
-            {
-                // TODO: this is temporary
-                reference.Target = "https://www.youtube.com/v/" + reference.Target;
-            }
-
             return new ReleaseViewModel
             {
                 Release = model,
