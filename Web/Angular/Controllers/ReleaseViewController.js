@@ -1,10 +1,10 @@
 ﻿"use strict";
 
 angular.module("RecordLabelAngular").controller("ReleaseViewController",
-    ["$scope", "$http", "$routeParams", "$sce", "releasesService",
-    function ReleaseViewController($scope, $http, $routeParams, $sce, releasesService) {
+    ["$scope", "$routeParams", "$sce", "releasesService", "resourceErrorHandler",
+    function ReleaseViewController($scope, $routeParams, $sce, releasesService, resourceErrorHandler) {
 
-        releasesService.get($routeParams).$promise.then(function (data) {
+        var takeCareOfResponse = function (data) {
             var model = data.Release
             model.YoutubeReferences = data.YoutubeReferences;
 
@@ -16,6 +16,8 @@ angular.module("RecordLabelAngular").controller("ReleaseViewController",
             }
 
             $scope.model = model;
-        });
+        }
+
+        resourceErrorHandler(releasesService.get($routeParams)).$promise.then(takeCareOfResponse);
     }
 ]);

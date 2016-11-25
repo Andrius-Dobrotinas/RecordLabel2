@@ -81,7 +81,8 @@
     <Content Include="Angular\Controllers\ReleaseListController.js" />
     <Content Include="Angular\Controllers\ReleaseViewController.js" />
     <Content Include="Angular\RecordLabelAngular.js" />
-    <Content Include="Angular\Resources.js" />
+    <Content Include="Angular\Services\Services.js" />
+    <Content Include="Angular\Services\ResourceServices.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -146,7 +147,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Angular\Services\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

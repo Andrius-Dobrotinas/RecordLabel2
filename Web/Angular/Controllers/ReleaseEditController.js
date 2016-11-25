@@ -1,15 +1,15 @@
 ﻿"use strict";
 
 angular.module("RecordLabelAngular").controller("ReleaseEditController",
-    ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService",
-    function ReleaseEditController($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService) {
+    ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService", "resourceErrorHandler",
+    function ReleaseEditController($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler) {
 
-        $scope.constants = constantsService.get();
-        
-        $scope.artists = artistsService.getList();
-        $scope.mediaTypes = mediaTypesService.query();
+        $scope.constants = resourceErrorHandler(constantsService.get());
+                        
+        $scope.artists = resourceErrorHandler(artistsService.getList());
+        $scope.mediaTypes = resourceErrorHandler(mediaTypesService.query());
 
-        $scope.model = releasesService.getForEdit($routeParams);
+        $scope.model = resourceErrorHandler(releasesService.getForEdit($routeParams));
 
         $scope.update = function (ReleaseEditForm) {
             if (ReleaseEditForm.$valid) {

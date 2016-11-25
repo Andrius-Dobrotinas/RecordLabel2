@@ -8,7 +8,7 @@ angular.module("RecordLabelAngular", ["ngRoute", "ngResource"])
             controller: ""
         })*/
         .when("/Release", {
-            templateUrl: "Angular/Templates/ReleaseList.html",//templates/html
+            templateUrl: "Angular/Templates/ReleaseList.html",
             controller: "ReleaseListController"
         })
         .when("/Release/:id", {
@@ -24,6 +24,7 @@ angular.module("RecordLabelAngular", ["ngRoute", "ngResource"])
         })
     })
     .run(["$rootScope", "metadataService", function ($rootScope, metadataService) {
+        $rootScope.errors = [];
         // Populate global metadata list because we'll need it a lot
         $rootScope.metadataList = metadataService.query();
     }
