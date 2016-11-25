@@ -1,0 +1,184 @@
+﻿<div class="">
+    <form name="ReleaseEditForm" novalidate>
+        <div class="form-group row">
+            <label for="Title" class="control-label col-sm-2">Title</label>
+            <div class="col-sm-10">
+                <input type="text" name="Title" id="Title" class="form-control" ng-model="model.Title" required />
+                <div ng-show="ReleaseEditForm.Title.$dirty &amp;&amp; ReleaseEditForm.Title.$error.required" 
+                     class="text-danger">Release Title is required</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Date" class="control-label col-sm-2">Release Year</label>
+            <div class="col-sm-10">
+                <input type="number" name="Date" id="Date" class="form-control" ng-model="model.Date" required 
+                       min="{{constants.MinDate}}" max="{{constants.MaxDate}}" />
+                <div ng-show="ReleaseEditForm.Date.$dirty &amp;&amp; ReleaseEditForm.Date.$error.required" 
+                     class="text-danger">Release Date is required</div>
+                <div ng-show="ReleaseEditForm.Date.$dirty &amp;&amp; !ReleaseEditForm.Date.$error.required &amp;&amp; ReleaseEditForm.Date.$invalid" 
+                     class="text-danger">Release Date must be a valid year between {{constants.MinDate}} and {{constants.MaxDate}}</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ArtistId" class="control-label col-sm-2">Artist</label>
+            <div class="col-sm-10">
+                <select id="ArtistId" name="ArtistId" class="form-control" ng-model="model.ArtistId" 
+                        ng-options="item.Id as item.Name for item in artists"></select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="CatNumber" class="control-label col-sm-2">Catalogue Number</label>
+            <div class="col-sm-10">
+                <input type="text" name="CatNumber" id="CatNumber" class="form-control" ng-model="model.CatalogueNumber" required />
+                <div ng-show="ReleaseEditForm.CatNumber.$dirty &amp;&amp; ReleaseEditForm.CatNumber.$error.required" 
+                     class="text-danger">Release Catalogue number is required</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="MediaId" class="control-label col-sm-2">Media</label>
+            <div class="col-sm-10">
+                <select id="MediaId" name="MediaId" class="form-control" ng-model="model.MediaId" 
+                        ng-options="item.Id as item.Text for item in mediaTypes">
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Length" class="control-label col-sm-2">Length</label>
+            <div class="col-sm-10">
+                <input name="Length" id="Length" type="number" class="form-control" ng-model="model.Length" required
+                       placeholder="Release length in minutes" />
+                <div ng-show="ReleaseEditForm.Length.$dirty &amp;&amp; ReleaseEditForm.Length.$error.required" 
+                     class="text-danger">Release Length is required</div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="PrintStatusId" class="control-label col-sm-2">Print Status</label>
+            <div class="col-sm-10">
+                <select id="PrintStatusId" name="PrintStatusId" class="form-control" ng-model="model.PrintStatus" 
+                        ng-options="item.Id as item.Text for item in constants.PrintStatuses">
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Title" class="control-label col-sm-2">Text</label>
+            <div class="col-sm-10">
+                <input type="text" name="Text" id="Text" class="form-control" ng-model="model.Text" 
+                       placeholder="Some short description of release to be displayed in release list" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="MedatadaIds" class="control-label col-sm-2">Metadata</label>
+            <div class="col-sm-10">
+                <select multiple id="MedatadaIds" name="MedatadaIds" class="form-control" ng-model="model.MetadataIds" 
+                        ng-options="item.Id as item.Text for item in metadataList">
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">            
+            <div class="col-sm-10 col-sm-offset-2">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Tracks">
+                    Edit Tracklist
+                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#References">
+                    Edit References
+                </button> 
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn btn-success" ng-click="update(ReleaseEditForm)">Save</button>
+        </div>
+    </form>
+
+    <div id="References" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Edit References</h4>
+                </div>
+                <div class="modal-body">
+                    <div ng-repeat="ref in model.References track by $index">
+                        <div>
+                            <button type="button" name="remove" class="close" ng-click="deleteReference($index)">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2">Target</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="ref.Target" required />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2">Type</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" ng-model="ref.Type"
+                                        ng-options="item.Id as item.Text for item in constants.ReferenceTypes"></select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2">Order</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" ng-model="ref.Order" />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-default"
+                                ng-click="addReference()">Add</button>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">   
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Tracks" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Edit Tracks</h4>
+                </div>
+                <div class="modal-body">
+                    <div ng-repeat="track in model.Tracks track by $index">
+                        <button type="button" name="remove" class="close" ng-click="deleteTrack($index)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2">Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="track.Title" required />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-sm-2">Reference Target</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="track.Reference" />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-default"
+                                ng-click="addTrack()">
+                            Add
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
