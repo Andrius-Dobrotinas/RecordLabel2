@@ -18,19 +18,19 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             return list.ToArray();
         }
 
-        public SuperModels.MediaType GetMediaType(MediaType dbModel)
+        public AndrewD.RecordLabel.MediaType GetMediaType(MediaType dbModel)
         {
-            return new SuperModels.MediaType
+            return new AndrewD.RecordLabel.MediaType
             {
                 Id = dbModel.Id,
                 Text = dbModel.Text
             };
         }
 
-        public SuperModels.Reference GetReference(Reference dbModel)
+        public AndrewD.RecordLabel.Reference GetReference(Reference dbModel)
         {
             if (dbModel == null) return null;
-            return new SuperModels.Reference
+            return new AndrewD.RecordLabel.Reference
             {
                 Id = dbModel.Id,
                 Order = dbModel.Order,
@@ -39,9 +39,9 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
 
-        public SuperModels.Metadata GetMetadata(Metadata dbModel)
+        public AndrewD.RecordLabel.Metadata GetMetadata(Metadata dbModel)
         {
-            return new SuperModels.Metadata
+            return new AndrewD.RecordLabel.Metadata
             {
                 Id = dbModel.Id,
                 Text = dbModel.Text,
@@ -49,9 +49,9 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
 
-        public SuperModels.Track GetTrack(Track dbModel)
+        public AndrewD.RecordLabel.Track GetTrack(Track dbModel)
         {
-            return new SuperModels.Track
+            return new AndrewD.RecordLabel.Track
             {
                 Id = dbModel.Id,
                 Reference = dbModel.Reference,
@@ -59,9 +59,9 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
 
-        public SuperModels.Artist GetArtistComplete(Artist dbModel)
+        public AndrewD.RecordLabel.Artist GetArtistComplete(Artist dbModel)
         {
-            return new SuperModels.Artist
+            return new AndrewD.RecordLabel.Artist
             {
                 Id = dbModel.Id,
                 Name = dbModel.Name,
@@ -71,9 +71,9 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
 
-        public SuperModels.ArtistSlim GetArtistSlim(Artist dbModel)
+        public AndrewD.RecordLabel.ArtistSlim GetArtistSlim(Artist dbModel)
         {
-            return new SuperModels.ArtistSlim
+            return new AndrewD.RecordLabel.ArtistSlim
             {
                 Id = dbModel.Id,
                 Name = dbModel.Name,
@@ -83,9 +83,9 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
 
-        public SuperModels.ArtistBarebones GetArtistBareBones(Artist dbModel)
+        public AndrewD.RecordLabel.ArtistBarebones GetArtistBareBones(Artist dbModel)
         {
-            return new SuperModels.ArtistBarebones
+            return new AndrewD.RecordLabel.ArtistBarebones
             {
                 Id = dbModel.Id,
                 Name = dbModel.Name,
@@ -93,9 +93,9 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
 
-        public SuperModels.Release GetReleaseComplete(Release dbModel)
+        public AndrewD.RecordLabel.Release GetReleaseComplete(Release dbModel)
         {
-            return new SuperModels.Release
+            return new AndrewD.RecordLabel.Release
             {
                 Id = dbModel.Id,
                 CatalogueNumber = dbModel.CatalogueNumber,
@@ -112,9 +112,9 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
 
-        public SuperModels.ReleaseSlim GetReleaseSlim(Release dbModel)
+        public AndrewD.RecordLabel.ReleaseSlim GetReleaseSlim(Release dbModel)
         {
-            return new SuperModels.ReleaseSlim
+            return new AndrewD.RecordLabel.ReleaseSlim
             {
                 Id = dbModel.Id,
                 CatalogueNumber = dbModel.CatalogueNumber,

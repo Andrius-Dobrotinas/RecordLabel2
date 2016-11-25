@@ -1,5 +1,4 @@
 ﻿using AndrewD.RecordLabel.Data;
-using AndrewD.RecordLabel.SuperModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,43 +37,43 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             Dispose(true);
         }
 
-        public SuperModels.Release GetReleaseComplete(int id)
+        public AndrewD.RecordLabel.Release GetReleaseComplete(int id)
         {
             var dbModel = context.GetReleaseComplete(id);
             return dbModel != null ? entityTransformer.GetReleaseComplete(dbModel) : null;
         }
 
-        public SuperModels.ReleaseSlim GetReleaseSlim(int id)
+        public AndrewD.RecordLabel.ReleaseSlim GetReleaseSlim(int id)
         {
             var dbModel = context.GetRelease(id);
             return dbModel != null ? entityTransformer.GetReleaseSlim(dbModel) : null;
         }
 
-        public SuperModels.Release[] GetReleases()
+        public AndrewD.RecordLabel.Release[] GetReleases()
         {
             var dbModel = context.GetAllReleases();           
             return entityTransformer.GetList(dbModel, entityTransformer.GetReleaseComplete);
         }
 
-        public SuperModels.ArtistBarebones[] GetArtistBarebonesList()
+        public AndrewD.RecordLabel.ArtistBarebones[] GetArtistBarebonesList()
         {
             var dbModel = context.GetArtistList();
             return dbModel != null ? entityTransformer.GetList(dbModel, entityTransformer.GetArtistBareBones) : null;
         }
 
-        public SuperModels.MediaType[] GetMediaTypeList()
+        public AndrewD.RecordLabel.MediaType[] GetMediaTypeList()
         {
             var dbModel = context.GetMediaTypeList();
             return entityTransformer.GetList(dbModel, entityTransformer.GetMediaType);
         }
 
-        public SuperModels.Metadata[] GetMetadataList()
+        public AndrewD.RecordLabel.Metadata[] GetMetadataList()
         {
             var dbModel = context.GetMetadataList();
             return entityTransformer.GetList(dbModel, entityTransformer.GetMetadata);
         }
 
-        public void Save(SuperModels.ReleaseSlim model)
+        public void Save(AndrewD.RecordLabel.ReleaseSlim model)
         {
             var dbModel = modelTransformer.GetRelease(model);
             context.SaveModel<Release>(dbModel);

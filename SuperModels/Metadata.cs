@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AndrewD.RecordLabel;
 
-namespace AndrewD.RecordLabel.SuperModels
+namespace AndrewD.RecordLabel
 {
     public class Metadata
     {

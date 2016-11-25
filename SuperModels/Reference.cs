@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AndrewD.RecordLabel.SuperModels
+namespace AndrewD.RecordLabel
 {
     public class Reference
     {

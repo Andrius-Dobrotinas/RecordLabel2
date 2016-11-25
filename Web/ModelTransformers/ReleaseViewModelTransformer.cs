@@ -7,7 +7,7 @@ namespace AndrewD.RecordLabel.Web
 {
     public class ReleaseViewModelTransformer
     {
-        public ReleaseViewModel Transform(SuperModels.Release model)
+        public ReleaseViewModel Transform(Release model)
         {
             var youtubeRefs = model.References?.Where(x => x.Type == ReferenceType.Youtube).ToArray();
 
@@ -18,6 +18,7 @@ namespace AndrewD.RecordLabel.Web
 
             foreach (var reference in youtubeRefs)
             {
+                // TODO: this is temporary
                 reference.Target = "https://www.youtube.com/v/" + reference.Target;
             }
 

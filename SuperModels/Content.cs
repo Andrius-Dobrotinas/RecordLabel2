@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AndrewD.RecordLabel.SuperModels
+namespace AndrewD.RecordLabel
 {
     public abstract class Content
     {

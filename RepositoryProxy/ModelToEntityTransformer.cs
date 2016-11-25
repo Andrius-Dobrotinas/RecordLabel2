@@ -16,7 +16,7 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             return list.ToList();
         }
 
-        public Release GetRelease(SuperModels.ReleaseSlim model)
+        public Release GetRelease(AndrewD.RecordLabel.ReleaseSlim model)
         {
             return new Release
             {
@@ -35,7 +35,7 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
         
-        public Metadata GetMetadata(SuperModels.Metadata model)
+        public Metadata GetMetadata(AndrewD.RecordLabel.Metadata model)
         {
             return new Metadata
             {
@@ -54,7 +54,7 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
 
-        public Reference GetReference(SuperModels.Reference model)
+        public Reference GetReference(AndrewD.RecordLabel.Reference model)
         {
             return new Reference
             {
@@ -66,7 +66,7 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             };
         }
 
-        public Track GetTrack(SuperModels.Track model)
+        public Track GetTrack(AndrewD.RecordLabel.Track model)
         {
             return new Track
             {

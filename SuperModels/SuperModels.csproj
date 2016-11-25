@@ -7,7 +7,7 @@
     <ProjectGuid>{773DC2A4-24D7-493C-A2A5-B8FD0BAFDA51}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AndrewD.RecordLabel.SuperModels</RootNamespace>
+    <RootNamespace>AndrewD.RecordLabel</RootNamespace>
     <AssemblyName>SuperModels</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
