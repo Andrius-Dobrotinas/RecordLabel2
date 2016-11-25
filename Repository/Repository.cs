@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace AndrewD.RecordLabel.Data.EF.Access
 {
-    public class Repository : IDisposable
+    public class Repository : IRepository
     {
         private ReleaseContext context;
         private const string modelNamespace = "AndrewD.RecordLabel.Data.EF";
@@ -87,6 +87,6 @@ namespace AndrewD.RecordLabel.Data.EF.Access
         public Metadata[] GetMetadataList()
         {
             return context.Metadata.ToArray();
-        }      
+        } 
     }
 }
