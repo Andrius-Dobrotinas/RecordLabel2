@@ -12,6 +12,7 @@ angular.module("RecordLabel").controller("ReleaseEditController",
         $scope.model = resourceErrorHandler(releasesService.getForEdit($routeParams));
 
         $scope.update = function (ReleaseEditForm) {
+            // TODO: handle error responses
             if (ReleaseEditForm.$valid) {
                 releasesService.save($scope.model);
             }
@@ -32,5 +33,22 @@ angular.module("RecordLabel").controller("ReleaseEditController",
         $scope.deleteTrack = function (index) {
             $scope.model.Tracks.splice(index, 1);
         }
+
+        // Checks if a field has invalid value
+        $scope.isValid = function (formField) {
+            return formField.$dirty && formField.$invalid;
+        }
+
+        // Checks if a field has an invalid NON-empty value
+        $scope.isValidForRequired = function (formField) {
+            return formField.$dirty && !formField.$error.required && formField.$invalid;
+        }
+
+        // Checks if a field is empty
+        $scope.isEmptyForRequired = function (formField) {
+            return formField.$error && formField.$error.required;
+        }
+
+        // TODO: function that checks references and tracks and that determines the state of modal Close and X
     }
 ]);
