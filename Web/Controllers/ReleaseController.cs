@@ -12,6 +12,16 @@ namespace AndrewD.RecordLabel.Web
     {
         private IRepositoryProxy repository;
 
+        // TODO: make this DI'able
+        private Validators.ICustomModelValidator<ReleaseSlim> _modelValidator;
+        private Validators.ICustomModelValidator<ReleaseSlim> modelValidator
+        {
+            get
+            {
+                return _modelValidator ?? (_modelValidator = new Validators.CustomModelValidator());
+            }
+        }
+
         public ReleaseController()
         {
             // TODO: DI
@@ -62,14 +72,25 @@ namespace AndrewD.RecordLabel.Web
             }
         }
         
-        public void Post(ReleaseSlim model)
+        public IHttpActionResult Post(ReleaseSlim model)
         {
-            //TODO: if (model == null)
             RemoveEmptyItems(model);// TODO
-            //TODO: validations
 
-            // TODO: try/catch and log
-            repository.Save(model);
+            foreach (var item in modelValidator.Validate(model))
+            {
+                ModelState.AddModelError(item.Key, item.Value);
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            else
+            {
+                // TODO: try/catch and log
+                repository.Save(model);
+                return Ok();
+            }
         }
 
         // TODO

@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
@@ -40,6 +41,7 @@
     <Compile Include="Artist.cs" />
     <Compile Include="ContentSlim.cs" />
     <Compile Include="Content.cs" />
+    <Compile Include="Validators\CustomModelValidator.cs" />
     <Compile Include="MediaType.cs" />
     <Compile Include="Metadata.cs" />
     <Compile Include="Reference.cs" />
@@ -47,6 +49,7 @@
     <Compile Include="Release.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\ICustomReleaseSlimValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
