@@ -45,9 +45,11 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ContextSeed.cs" />
+    <Compile Include="Configuration\DropAndSeedAlways.cs" />
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\Content.cs" />
-    <Compile Include="DropCreateAndSeedInitializer.cs" />
+    <Compile Include="Configuration\DropAndSeedOnChanges.cs" />
     <Compile Include="Models\MediaType.cs" />
     <Compile Include="Models\Metadata.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

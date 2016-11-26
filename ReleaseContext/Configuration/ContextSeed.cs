@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 
-namespace AndrewD.RecordLabel.Data.EF
+namespace AndrewD.RecordLabel.Data.EF.Configuration
 {
-    public class DropCreateAndSeedInitializer<T> : DropCreateDatabaseAlways<T> where T : ReleaseContext
+    public class ContextSeed
     {
-        protected override void Seed(T db)
+        public static void Seed<T>(T db) where T : ReleaseContext
         {
             // MEDIA TYPES
             var media_LP = new MediaType { Text = "LP" };
@@ -122,8 +121,6 @@ namespace AndrewD.RecordLabel.Data.EF
             release1.References.Add(reference2);
 
             db.SaveChanges();
-
-            base.Seed(db);
         }
     }
 }

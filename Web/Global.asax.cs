@@ -14,7 +14,8 @@ namespace AndrewD.RecordLabel.Web
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
-            System.Data.Entity.Database.SetInitializer(new DropCreateAndSeedInitializer<ReleaseContext>());
+            System.Data.Entity.Database.SetInitializer(new Data.EF.Configuration.DropAndSeedOnChanges<ReleaseContext>());
+            //System.Data.Entity.Database.SetInitializer(new Data.EF.Configuration.DropAndSeedAlways<ReleaseContext>());
         }
     }
 }
