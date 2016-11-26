@@ -46,15 +46,7 @@ namespace AndrewD.RecordLabel.Data.EF.Access
 
             merger.MergeEntityChanges(model);
 
-            try
-            {
-                context.SaveChanges();
-            }
-            catch (System.Data.Entity.Validation.DbEntityValidationException e)
-            {
-                // TODO
-            }
-            // TODO: exception handling
+            context.SaveChanges();
         }
         
         public Release[] GetAllReleases()

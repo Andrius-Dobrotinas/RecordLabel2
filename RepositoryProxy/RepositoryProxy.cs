@@ -50,7 +50,7 @@ namespace AndrewD.RecordLabel.Data.EF.Access
 
         public AndrewD.RecordLabel.Release[] GetReleases()
         {
-            var dbModel = repository.GetAllReleases();           
+            var dbModel = repository.GetAllReleases();       
             return entityTransformer.GetList(dbModel, entityTransformer.GetReleaseComplete);
         }
 
@@ -75,7 +75,12 @@ namespace AndrewD.RecordLabel.Data.EF.Access
         public void Save(AndrewD.RecordLabel.ReleaseSlim model)
         {
             var dbModel = modelTransformer.GetRelease(model);
-            repository.SaveModel<Release>(dbModel);
+            SaveModel(dbModel);
+        }
+
+        private void SaveModel<TModel>(TModel dbModel) where TModel : class
+        {
+            repository.SaveModel<TModel>(dbModel);
         }
     }
 }

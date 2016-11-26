@@ -15,7 +15,7 @@ namespace AndrewD.RecordLabel.Web
             var ReferenceTypeEnum = (from object item in typeof(ReferenceType).GetEnumValues()
                                      select new { Id = (int)item, Text = item.ToString() })
                 .ToArray().ToDictionary(x => x.Text, x => x.Id);
-
+            
             return Ok(new
             {
                 PrintStatuses = GetEnumArray<PrintStatus>(),

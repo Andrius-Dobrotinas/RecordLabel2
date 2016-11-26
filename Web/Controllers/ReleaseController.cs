@@ -68,6 +68,7 @@ namespace AndrewD.RecordLabel.Web
             RemoveEmptyItems(model);// TODO
             //TODO: validations
 
+            // TODO: try/catch and log
             repository.Save(model);
         }
 
