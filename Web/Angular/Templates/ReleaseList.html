@@ -7,6 +7,10 @@
 </div>
 }-->
 
+<div ng-show="isAdminMode">
+    <a href="#/Releases/new" class="btn btn-default">Create New</a>
+</div>
+
 <div class="row" id="TheList">
     <div ng-repeat="model in entries" class="col-lg-4 col-sm-6 list-cell">
         <div class="list-item">

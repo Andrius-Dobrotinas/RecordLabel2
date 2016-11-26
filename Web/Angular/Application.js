@@ -6,6 +6,10 @@ angular.module("RecordLabel", ["ngRoute", "ngResource"])
             templateUrl: "Angular/Templates/ReleaseList.html",
             controller: "ReleaseListController"
         })
+        .when("/Releases/new", {
+            templateUrl: "Angular/Templates/ReleaseEdit.html",
+            controller: "ReleaseEditController"
+        })
         .when("/Releases/:id", {
             templateUrl: "Angular/Templates/ReleaseView.html",
             controller: "ReleaseViewController"
@@ -13,7 +17,7 @@ angular.module("RecordLabel", ["ngRoute", "ngResource"])
         .when("/Releases/edit/:id", {
             templateUrl: "Angular/Templates/ReleaseEdit.html",
             controller: "ReleaseEditController"
-        })
+        })        
         .otherwise({
             redirectTo: "/Releases"
         })

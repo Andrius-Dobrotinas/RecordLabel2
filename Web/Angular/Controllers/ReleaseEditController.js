@@ -4,19 +4,40 @@ angular.module("RecordLabel").controller("ReleaseEditController",
     ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService", "resourceErrorHandler", "modelPostResourceService",
 function ReleaseEditController($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler, modelPostResourceService) {
 
-        $scope.constants = resourceErrorHandler(constantsService.get());                     
+        $scope.validationErrors = [];
+        $scope.constants = resourceErrorHandler(constantsService.get());
         $scope.artists = resourceErrorHandler(artistsService.getList());
         $scope.mediaTypes = resourceErrorHandler(mediaTypesService.query());
-        $scope.model = resourceErrorHandler(releasesService.getForEdit($routeParams));
-        $scope.validationErrors = [];
+
+        // Either get an existing entry for editing or, if not Id supplied, get a template for a new item
+        $scope.model;
+        if ($routeParams.id) {
+            $scope.model = resourceErrorHandler(releasesService.getForEdit($routeParams));
+        } else {
+            $scope.model = resourceErrorHandler(releasesService.getTemplate());
+
+            // Set Release template Artist and MediaType Ids to null in order for Select element validations to work
+            $scope.model.$promise.then(function (data) {
+                data.ArtistId = null;
+                data.MediaId = null;
+            })
+        }
 
         $scope.update = function (form) {
-            // TODO: handle error responses
+            $scope.errors.length = 0;
+
             if (form.$valid) {
                 $scope.validationErrors.length = 0;
                 modelPostResourceService(releasesService.save($scope.model), "/Releases", $scope.validationErrors);
             } else {
                 $scope.errors.push({ statusText: "Data cannot be submitted because there are validation errors!" });
+
+                // Mark fields as dirty so that the UI displayed messages for each
+                for (let field in form) {
+                    if (field.charAt(0) !== "$") {
+                        form[field].$setDirty();
+                    }
+                }
             }
         }
 
@@ -48,7 +69,7 @@ function ReleaseEditController($scope, $routeParams, releasesService, artistsSer
 
         // Checks if a field is empty
         $scope.isEmptyForRequired = function (formField) {
-            return formField.$error && formField.$error.required;
+            return formField.$dirty && formField.$error && formField.$error.required;
         }
     }
 ]);

@@ -71,6 +71,13 @@ namespace AndrewD.RecordLabel.Web
                 return NotFound();
             }
         }
+
+        public IHttpActionResult GetTemplate()
+        {
+            return Ok(new ReleaseSlim {
+                Date = (short)DateTime.Now.Year
+            });
+        }
         
         public IHttpActionResult Post(ReleaseSlim model)
         {
