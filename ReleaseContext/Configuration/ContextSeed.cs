@@ -120,6 +120,10 @@ namespace AndrewD.RecordLabel.Data.EF.Configuration
             release1.References.Add(reference1);
             release1.References.Add(reference2);
 
+            // Finally, add the rest of the MediaTypes to the database
+            db.MediaTypes.Add(media_CD);
+            db.MediaTypes.Add(media_FLAC);
+
             db.SaveChanges();
         }
     }
