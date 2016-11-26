@@ -11,10 +11,12 @@ angular.module("RecordLabel").controller("ReleaseEditController",
 
         $scope.model = resourceErrorHandler(releasesService.getForEdit($routeParams));
 
-        $scope.update = function (ReleaseEditForm) {
+        $scope.update = function (form) {
             // TODO: handle error responses
-            if (ReleaseEditForm.$valid) {
+            if (form.$valid) {
                 releasesService.save($scope.model);
+            } else {
+                $scope.errors.push({ statusText: "Data cannot be submitted because there are validation errors!" });
             }
         }
 
@@ -48,7 +50,5 @@ angular.module("RecordLabel").controller("ReleaseEditController",
         $scope.isEmptyForRequired = function (formField) {
             return formField.$error && formField.$error.required;
         }
-
-        // TODO: function that checks references and tracks and that determines the state of modal Close and X
     }
 ]);
