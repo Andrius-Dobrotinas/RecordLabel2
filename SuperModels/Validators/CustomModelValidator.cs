@@ -19,7 +19,7 @@ namespace AndrewD.RecordLabel.Validators
                 errors.Add(GetEntry( nameof(model.PrintStatus), "Wrong Print Status value"));
             }
             // TODO: move these values to global scope
-            if (model.Date <= 1950 || model.Date >= 2016)
+            if (model.Date < 1950 || model.Date > 2016)
             {
                 errors.Add(GetEntry(nameof(model.Date), "Date must be between 1950 and 2016"));
             }
