@@ -26,6 +26,7 @@ angular.module("RecordLabel", ["ngRoute", "ngResource"])
         $rootScope.metadataList = metadataService.query();
 
         $rootScope.$on('$locationChangeStart', function (event) {
+            $rootScope.errors.length = 0;
             infoMsgService.changeLocation();
         });
     }
