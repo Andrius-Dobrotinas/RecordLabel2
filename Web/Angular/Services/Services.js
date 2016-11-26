@@ -13,3 +13,38 @@ application.factory("resourceErrorHandler", ["$rootScope", function ($rootScope)
         return promise;
     };
 }]);
+
+application.factory("modelPostResourceService", ["$location", "infoMsgService", function ($location, infoMsgService) {
+    return function (promise, redirectTo, errorArray) {
+        promise.$promise.then(function () {
+            infoMsgService.setMessage("Successfully saved!");
+            $location.url(redirectTo);
+        })
+        .catch(function (e) {
+            var sss = e;
+            for (let field in e.data.ModelState) {
+                e.data.ModelState[field].forEach(function (error) {
+                    errorArray.push({ field: field, error: error });
+                    console.log(field, error);
+                });
+            }
+        });
+
+        return promise;
+    }
+}]);
+
+application.factory("infoMsgService", ["$rootScope", function ($rootScope) {
+    return {
+        setMessage: function (msg) {
+            $rootScope.infoMessage = msg;
+            $rootScope.isInfoMsgFresh = true;
+        },
+        changeLocation: function () {
+            if (!$rootScope.isInfoMsgFresh) {
+                $rootScope.infoMessage = undefined;
+            }
+            $rootScope.isInfoMsgFresh = false;
+        }
+    }
+}]);

@@ -11,7 +11,7 @@
     <div ng-repeat="model in entries" class="col-lg-4 col-sm-6 list-cell">
         <div class="list-item">
             <article>
-                <a href="#/Release/{{model.Id}}">
+                <a href="#/Releases/{{model.Id}}">
                     <!--@Html.DisplayFor(model => model.Model.Cover, "Thumbnail", new { @class = "thumb1 album-cover-thumb" })-->
                     Thumbnail
                 </a>
@@ -20,7 +20,7 @@
                     <div ng-show="isAdminMode">
                         <div class="edit-btn-block">
                             <div class="edit-btn-container glyphicon">
-                                <a href="#/Release/edit/{{model.Id}}" class="glyphicon-pencil right-top-btn"></a>
+                                <a href="#/Releases/edit/{{model.Id}}" class="glyphicon-pencil right-top-btn"></a>
                             </div>
                         </div>
                     </div>
@@ -29,8 +29,8 @@
                         <!--@Html.ActionLink(Model.Artist.Name, "ByArtist", new { id = Model.ArtistId }, new { @class = "title on-top" })
                         @*@Html.ActionLink(Model.Artist?.Name, "View", "Artist", new { id = Model.ArtistId }, new { @class = "label invert no-left-pad subtitle on-top" })*@
                         @Html.ActionLink(Model.Title, "View", new { id = Model.Id }, new { @class = "label-wrap invert no-left-pad subtitle on-top" })-->
-                        <a href="#/Release/{{model.Id}}">{{model.Title}}</a>
-                        <a href="#/Artist/{{model.Artist.Id}}">{{model.Artist.Name}}</a>
+                        <a href="#/Releases/{{model.Id}}">{{model.Title}}</a>
+                        <a href="#/Artists/{{model.Artist.Id}}">{{model.Artist.Name}}</a>
                     </header>
                     <div>
                         <span class="text-muted on-top versions-menu-trigger">
@@ -62,7 +62,7 @@
                     </p>
                 </div>
             </article>
-            <a href="#/Release/{{model.Id}}">
+            <a href="#/Releases/{{model.Id}}">
                 <div class="list-item-front-panel"></div>
             </a>
         </div>

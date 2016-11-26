@@ -1,20 +1,20 @@
 ﻿"use strict";
 
 angular.module("RecordLabel").controller("ReleaseEditController",
-    ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService", "resourceErrorHandler",
-    function ReleaseEditController($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler) {
+    ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService", "resourceErrorHandler", "modelPostResourceService",
+function ReleaseEditController($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler, modelPostResourceService) {
 
-        $scope.constants = resourceErrorHandler(constantsService.get());
-                        
+        $scope.constants = resourceErrorHandler(constantsService.get());                     
         $scope.artists = resourceErrorHandler(artistsService.getList());
         $scope.mediaTypes = resourceErrorHandler(mediaTypesService.query());
-
         $scope.model = resourceErrorHandler(releasesService.getForEdit($routeParams));
+        $scope.validationErrors = [];
 
         $scope.update = function (form) {
             // TODO: handle error responses
             if (form.$valid) {
-                releasesService.save($scope.model);
+                $scope.validationErrors.length = 0;
+                modelPostResourceService(releasesService.save($scope.model), "/Releases", $scope.validationErrors);
             } else {
                 $scope.errors.push({ statusText: "Data cannot be submitted because there are validation errors!" });
             }

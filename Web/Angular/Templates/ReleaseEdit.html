@@ -1,4 +1,11 @@
 ﻿<div class="">
+    <div ng-repeat="error in validationErrors">
+        <div class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign"></span>
+            {{error.error}} ({{error.field}})
+        </div>
+    </div>
+
     <form name="ReleaseForm" novalidate>
         <div class="form-group row">
             <label for="Title" class="control-label col-sm-2">Title</label>
