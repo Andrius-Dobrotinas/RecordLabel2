@@ -7,10 +7,10 @@ namespace AndrewD.RecordLabel
 {
     public class ReleaseSlim : ContentSlim
     {
-        [Range(0, int.MaxValue, ErrorMessage = "Artist is required")]
+        [Range(1, int.MaxValue, ErrorMessage = "Artist is required")]
         public int ArtistId { get; set; }
 
-        [Range(0, int.MaxValue, ErrorMessage = "Media is required")]
+        [Range(1, int.MaxValue, ErrorMessage = "Media is required")]
         public int MediaId { get; set; }
 
         [Required]
@@ -21,7 +21,7 @@ namespace AndrewD.RecordLabel
         // Validate in controller due to dynamic nature of constrains of this value
         public short Date { get; set; }
 
-        [Range(0, int.MaxValue, ErrorMessage = "Length is required")]
+        [Range(0, int.MaxValue, ErrorMessage = "Length must be a positive number")]
         public short Length { get; set; }
 
         [Required]
