@@ -81,6 +81,8 @@
     <Content Include="Angular\Controllers\ReleaseListController.js" />
     <Content Include="Angular\Controllers\ReleaseViewController.js" />
     <Content Include="Angular\Application.js" />
+    <Content Include="Angular\Directives\ModalBox.js" />
+    <Content Include="Angular\Directives\Templates\ModalBox.html" />
     <Content Include="Angular\Services\Services.js" />
     <Content Include="Angular\Services\ResourceServices.js" />
     <Content Include="Content\bootstrap-theme.css" />
