@@ -21,7 +21,6 @@ application.factory("modelPostResourceService", ["$location", "infoMsgService", 
             $location.url(redirectTo);
         })
         .catch(function (e) {
-            var sss = e;
             for (let field in e.data.ModelState) {
                 e.data.ModelState[field].forEach(function (error) {
                     errorArray.push({ field: field, error: error });

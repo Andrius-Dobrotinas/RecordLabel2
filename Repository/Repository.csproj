@@ -57,6 +57,10 @@
     <Compile Include="Repository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common.Data\Common.Data.csproj">
+      <Project>{b415135f-55e2-4e43-b7b0-f12c7e11afe8}</Project>
+      <Name>Common.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReleaseContext\ReleaseContext.csproj">
       <Project>{08ef2f92-6760-4bc2-b593-3d320e494078}</Project>
       <Name>ReleaseContext</Name>

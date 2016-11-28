@@ -35,6 +35,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DelegateTypes.cs" />
+    <Compile Include="IQueryableExtensions.cs" />
     <Compile Include="IRepositoryProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

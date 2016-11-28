@@ -50,8 +50,19 @@ namespace AndrewD.RecordLabel.Data.EF.Access
 
         public AndrewD.RecordLabel.Release[] GetReleases()
         {
-            var dbModel = repository.GetAllReleases();       
-            return entityTransformer.GetList(dbModel, entityTransformer.GetReleaseComplete);
+            return TransformReleases(
+                repository.GetAllReleases(q => q.OrderByDescending(x => x.Date)));
+        }
+
+        public AndrewD.RecordLabel.Release[] GetReleases(int batch, int itemsPerBatch)
+        {
+            return TransformReleases(
+                repository.GetAllReleases(batch, itemsPerBatch, q => q.OrderByDescending(x => x.Date)));
+        }
+
+        private AndrewD.RecordLabel.Release[] TransformReleases(Release[] releases)
+        {
+            return entityTransformer.GetList(releases, entityTransformer.GetReleaseComplete);
         }
 
         public AndrewD.RecordLabel.ArtistBarebones[] GetArtistBarebonesList()

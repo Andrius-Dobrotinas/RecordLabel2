@@ -3,7 +3,7 @@
 angular.module("RecordLabel").controller("ReleaseEditController",
     ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService", "resourceErrorHandler", "modelPostResourceService",
     function ReleaseEditController($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler, modelPostResourceService) {
-
+        
         $scope.validationErrors = [];
         $scope.constants = resourceErrorHandler(constantsService.get());
         $scope.artists = resourceErrorHandler(artistsService.getList());

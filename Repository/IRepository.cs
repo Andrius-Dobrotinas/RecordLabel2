@@ -7,7 +7,8 @@ namespace AndrewD.RecordLabel.Data.EF.Access
     {
         void SaveModel<TModel>(TModel model) where TModel : class;
 
-        Release[] GetAllReleases();
+        Release[] GetAllReleases(OrderByFunc<Release> orderBy);
+        Release[] GetAllReleases(int batch, int itemsPerBatch, OrderByFunc<Release> orderBy);
 
         Release GetReleaseComplete(int id);
 

@@ -10,6 +10,9 @@ namespace AndrewD.RecordLabel.Web
 {
     public class ReleaseController : ApiController
     {
+        // TODO: take this from configuration
+        private static int itemsPerPage = 2;
+
         private IRepositoryProxy repository;
 
         // TODO: make this DI'able
@@ -40,6 +43,12 @@ namespace AndrewD.RecordLabel.Web
         public IHttpActionResult Get()
         {
             var model = repository.GetReleases();
+            return Ok(model);
+        }
+
+        public IHttpActionResult GetBatch(int batch)
+        {
+            var model = repository.GetReleases(batch, itemsPerPage);
             return Ok(model);
         }
 

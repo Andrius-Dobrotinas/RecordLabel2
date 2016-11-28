@@ -48,12 +48,22 @@ namespace AndrewD.RecordLabel.Data.EF.Access
 
             context.SaveChanges();
         }
-        
-        public Release[] GetAllReleases()
+
+        private Release[] LoadReleasesComplete(IQueryable<Release> query)
         {
             context.MediaTypes.Load();
             context.Artists.Load();
-            return context.Releases.ToArray();
+            return query.ToArray();
+        }
+
+        public Release[] GetAllReleases(OrderByFunc<Release> orderBy)
+        {
+            return LoadReleasesComplete(orderBy(context.Releases));
+        }
+
+        public Release[] GetAllReleases(int batch, int itemsPerBatch, OrderByFunc<Release> orderBy)
+        {
+            return LoadReleasesComplete(orderBy(context.Releases).GetBatch(batch, itemsPerBatch));
         }
 
         public Release GetReleaseComplete(int id)
