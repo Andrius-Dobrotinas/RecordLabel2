@@ -1,8 +1,8 @@
 ﻿"use strict";
 
-angular.module("RecordLabel").controller("ReleaseViewController",
+angular.module("RecordLabel").controller("ReleaseViewCtrl",
     ["$scope", "$routeParams", "$sce", "releasesService", "resourceErrorHandler",
-    function ReleaseViewController($scope, $routeParams, $sce, releasesService, resourceErrorHandler) {
+    function ReleaseViewCtrl($scope, $routeParams, $sce, releasesService, resourceErrorHandler) {
 
         var takeCareOfResponse = function (data) {
             var model = data.Release

@@ -3,20 +3,20 @@
 angular.module("RecordLabel", ["ngRoute", "ngResource"])
     .config(function ($routeProvider) {
         $routeProvider.when("/Releases", {
-            templateUrl: "Angular/Templates/ReleaseList.html",
-            controller: "ReleaseListController"
+            templateUrl: "Angular/templates/ReleaseList.html",
+            controller: "ReleaseListCtrl"
         })
         .when("/Releases/new", {
-            templateUrl: "Angular/Templates/ReleaseEdit.html",
-            controller: "ReleaseEditController"
+            templateUrl: "Angular/templates/ReleaseEdit.html",
+            controller: "ReleaseEditCtrl"
         })
         .when("/Releases/:id", {
-            templateUrl: "Angular/Templates/ReleaseView.html",
-            controller: "ReleaseViewController"
+            templateUrl: "Angular/templates/ReleaseView.html",
+            controller: "ReleaseViewCtrl"
         })
         .when("/Releases/edit/:id", {
-            templateUrl: "Angular/Templates/ReleaseEdit.html",
-            controller: "ReleaseEditController"
+            templateUrl: "Angular/templates/ReleaseEdit.html",
+            controller: "ReleaseEditCtrl"
         })        
         .otherwise({
             redirectTo: "/Releases"

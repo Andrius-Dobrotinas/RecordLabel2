@@ -1,8 +1,8 @@
 ﻿"use strict";
 
-angular.module("RecordLabel").controller("ReleaseEditController",
+angular.module("RecordLabel").controller("ReleaseEditCtrl",
     ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService", "resourceErrorHandler", "modelPostResourceService",
-    function ReleaseEditController($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler, modelPostResourceService) {
+    function ReleaseEditCtrl($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler, modelPostResourceService) {
         
         $scope.validationErrors = [];
         $scope.constants = resourceErrorHandler(constantsService.get());

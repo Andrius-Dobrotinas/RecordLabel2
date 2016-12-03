@@ -10,7 +10,7 @@ application.directive("modalBox", function ($compile) {
             body: "modalBoxBody",
             buttons: "?modalBoxButtons"
         },
-        templateUrl: "Angular/Directives/Templates/ModalBox.html",
+        templateUrl: "Angular/directives/modalBox/modalBox.html",
         scope: {
             id: "@modalId",
             title: "@modalTitle",

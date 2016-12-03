@@ -77,14 +77,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Angular\Controllers\ReleaseEditController.js" />
-    <Content Include="Angular\Controllers\ReleaseListController.js" />
-    <Content Include="Angular\Controllers\ReleaseViewController.js" />
-    <Content Include="Angular\Application.js" />
-    <Content Include="Angular\Directives\ModalBox.js" />
-    <Content Include="Angular\Directives\Templates\ModalBox.html" />
-    <Content Include="Angular\Services\Services.js" />
-    <Content Include="Angular\Services\ResourceServices.js" />
+    <Content Include="Angular\controllers\ReleaseEditCtrl.js" />
+    <Content Include="Angular\controllers\ReleaseListCtrl.js" />
+    <Content Include="Angular\controllers\ReleaseViewCtrl.js" />
+    <Content Include="Angular\application.js" />
+    <Content Include="Angular\directives\modalBox\modalBox.js" />
+    <Content Include="Angular\directives\modalBox\modalBox.html" />
+    <Content Include="Angular\services\Services.js" />
+    <Content Include="Angular\services\ResourceServices.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -92,9 +92,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
-    <Content Include="Angular\Templates\ReleaseEdit.html" />
-    <Content Include="Angular\Templates\ReleaseList.html" />
-    <Content Include="Angular\Templates\ReleaseView.html" />
+    <Content Include="Angular\templates\ReleaseEdit.html" />
+    <Content Include="Angular\templates\ReleaseList.html" />
+    <Content Include="Angular\templates\ReleaseView.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-resource.js" />
     <Content Include="Scripts\angular-resource.min.js" />
