@@ -14,9 +14,9 @@ application.directive("modalBox", function () {
         scope: {
             id: "@modalId",
             title: "@modalTitle",
-            closeButtonTitle: "@modalCloseButtonTitle",
-            closeButtonDisabled: "&modalCloseButtonDisabled",
-            xButton: "&modalNoTopCloseButton"
+            closeButtonTitle: "@modalCloseBtnTitle",
+            closeButtonDisabled: "&modalCloseBtnDisabled",
+            xButton: "&modalNoTopCloseBtn"
         }
     }
 });

@@ -104,8 +104,8 @@
 
         <!--Modals-->
 
-        <div modal-box modal-id="References" modal-title="Edit References" modal-close-button-title="Done" 
-             modal-close-button-disabled="RefsForm.$invalid" modal-no-top-close-button="RefsForm.$invalid" ng-form="RefsForm">
+        <div modal-box modal-id="References" modal-title="Edit References" modal-close-btn-title="Done" 
+             modal-close-btn-disabled="RefsForm.$invalid" modal-no-top-close-btn="RefsForm.$invalid" ng-form="RefsForm">
             <modal-box-body>
                 <div ng-repeat="ref in model.References track by $index" ng-form="RefForm">
                     <div>
@@ -141,8 +141,8 @@
             </modal-box-body>
         </div>
 
-        <div modal-box modal-id="Tracks" modal-title="Edit Tracklist" modal-close-button-title="Done"
-             modal-close-button-disabled="RefsForm.$invalid" modal-no-top-close-button="RefsForm.$invalid" ng-form="RefsForm">
+        <div modal-box modal-id="Tracks" modal-title="Edit Tracklist" modal-close-btn-title="Done"
+             modal-close-btn-disabled="RefsForm.$invalid" modal-no-top-close-btn="RefsForm.$invalid" ng-form="RefsForm">
             <modal-box-body>
                 <div ng-repeat="track in model.Tracks track by $index" ng-form="TrackForm">
                     <button type="button" name="remove" class="close" ng-click="deleteTrack($index)">

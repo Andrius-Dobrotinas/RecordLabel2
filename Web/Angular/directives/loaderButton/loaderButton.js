@@ -8,9 +8,9 @@ application.directive("loaderButton", function () {
         replace: true,
         templateUrl: "Angular/directives/loaderButton/loaderButton.html",
         scope: {
-            text: "@loaderBtnText",
-            busy: "&loaderBtnIsBusy",
-            action: "&loaderBtnClick"
+            text: "@lbtnText",
+            busy: "&lbtnIsBusy",
+            action: "&lbtnClick"
         }
     }
 });
