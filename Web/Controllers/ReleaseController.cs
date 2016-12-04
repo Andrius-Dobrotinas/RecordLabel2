@@ -4,15 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace AndrewD.RecordLabel.Web
 {
     public class ReleaseController : ApiController
     {
-        // TODO: take this from configuration
-        private static int itemsPerPage = 2;
-
         private IRepositoryProxy repository;
 
         // TODO: make this DI'able
@@ -48,7 +46,13 @@ namespace AndrewD.RecordLabel.Web
 
         public IHttpActionResult GetBatch(int batch)
         {
-            var model = repository.GetReleases(batch, itemsPerPage);
+            return GetBatch(batch, 0);
+        }
+
+        public IHttpActionResult GetBatch(int batch, int size)
+        {
+            if (size == 0) size = Settings.ItemsPerPage;
+            var model = repository.GetReleases(batch, size);
             return Ok(model);
         }
 

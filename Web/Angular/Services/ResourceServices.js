@@ -9,7 +9,7 @@ application.factory("metadataService", ["$resource", function ($resource) {
 application.factory("releasesService", ["$resource", function ($resource) {
     return $resource("/api/Release/:act", {}, {
         get: { method: "GET", params: { act: "Get" } },
-        queryBatch: { method: "GET", params: { act: "GetBatch" }, isArray: true },
+        queryBatch: { method: "GET", params: { act: "GetBatch" } },
         getForEdit: { method: "GET", params: { act: "GetForEdit" } },
         getTemplate: { method: "GET", params: { act: "GetTemplate" }, cache: true },
         save: { method: "POST", params: { act: "Post" } }

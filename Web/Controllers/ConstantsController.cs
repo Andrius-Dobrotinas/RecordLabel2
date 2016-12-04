@@ -25,7 +25,7 @@ namespace AndrewD.RecordLabel.Web
                 DefaultReference = new Reference(),
                 DefaultTrack = new Track(),
 
-                MinDate = 1950,
+                MinDate = 1950, // TODO: Get this value from somewhere else,
                 MaxDate = DateTime.Today.Year
             });
         }

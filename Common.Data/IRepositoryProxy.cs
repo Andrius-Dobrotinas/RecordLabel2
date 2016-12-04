@@ -8,7 +8,7 @@ namespace AndrewD.RecordLabel.Data
         Release GetReleaseComplete(int id);
         ReleaseSlim GetReleaseSlim(int id);
         Release[] GetReleases();
-        Release[] GetReleases(int batch, int itemsPerBatch);
+        BatchedResult<Release> GetReleases(int batch, int itemsPerBatch);
         ArtistBarebones[] GetArtistBarebonesList();
         MediaType[] GetMediaTypeList();
         Metadata[] GetMetadataList();

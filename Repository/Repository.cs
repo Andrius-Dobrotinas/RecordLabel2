@@ -76,6 +76,11 @@ namespace AndrewD.RecordLabel.Data.EF.Access
             return context.Releases.FirstOrDefault(x => x.Id == id);
         }
 
+        public int TotalReleaseCount()
+        {
+            return context.Releases.Count();
+        }
+
         public Artist[] GetArtistList()
         {
             return context.Artists.ToArray();

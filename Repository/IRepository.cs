@@ -10,6 +10,8 @@ namespace AndrewD.RecordLabel.Data.EF.Access
         Release[] GetAllReleases(OrderByFunc<Release> orderBy);
         Release[] GetAllReleases(int batch, int itemsPerBatch, OrderByFunc<Release> orderBy);
 
+        int TotalReleaseCount();
+
         Release GetReleaseComplete(int id);
 
         Release GetRelease(int id);

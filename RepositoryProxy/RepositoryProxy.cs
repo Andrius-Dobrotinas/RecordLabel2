@@ -10,6 +10,9 @@ namespace AndrewD.RecordLabel.Data.EF.Access
         private EntityToModelTransformer entityTransformer;
         private ModelToEntityTransformer modelTransformer;
 
+        private Func<int, int, int> CalculateBatchCount = 
+            (total, perPage) => (int)Math.Ceiling((decimal)total / (decimal)perPage);
+
         public RepositoryProxy()
         {
             // TODO: DI these guys
@@ -54,10 +57,18 @@ namespace AndrewD.RecordLabel.Data.EF.Access
                 repository.GetAllReleases(q => q.OrderByDescending(x => x.Date)));
         }
 
-        public AndrewD.RecordLabel.Release[] GetReleases(int batch, int itemsPerBatch)
+        public BatchedResult<AndrewD.RecordLabel.Release> GetReleases(int batch, int itemsPerBatch)
         {
-            return TransformReleases(
+            var releases = TransformReleases(
                 repository.GetAllReleases(batch, itemsPerBatch, q => q.OrderByDescending(x => x.Date)));
+            var total = repository.TotalReleaseCount();
+            var batchCount = CalculateBatchCount(total, itemsPerBatch);
+
+            return new BatchedResult<RecordLabel.Release>
+            {
+                Entries = releases,
+                BatchCount = batchCount
+            };
         }
 
         private AndrewD.RecordLabel.Release[] TransformReleases(Release[] releases)

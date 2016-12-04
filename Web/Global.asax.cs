@@ -13,6 +13,7 @@ namespace AndrewD.RecordLabel.Web
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            Settings.InitSettings();
 
             System.Data.Entity.Database.SetInitializer(new Data.EF.Configuration.DropAndSeedOnChanges<ReleaseContext>());
             //System.Data.Entity.Database.SetInitializer(new Data.EF.Configuration.DropAndSeedAlways<ReleaseContext>());
