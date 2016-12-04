@@ -2,7 +2,7 @@
 
 var application = angular.module("RecordLabel");
 
-application.directive("modalBox", function ($compile) {
+application.directive("modalBox", function () {
     return {
         restrict: "A",
         replace: true,
