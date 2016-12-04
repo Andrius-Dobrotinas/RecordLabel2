@@ -11,64 +11,66 @@
     <a href="#/Releases/new" class="btn btn-default">Create New</a>
 </div>
 
-<div class="row" id="TheList">
-    <div ng-repeat="model in ctrl.entries()" class="col-lg-4 col-sm-6 list-cell">
-        <div class="list-item">
-            <article>
-                <a href="#/Releases/{{model.Id}}">
-                    <!--@Html.DisplayFor(model => model.Model.Cover, "Thumbnail", new { @class = "thumb1 album-cover-thumb" })-->
-                    Thumbnail
-                </a>
-                <div class="body">
-                    <!--a directive?-->
-                    <div ng-show="isAdminMode">
-                        <div class="edit-btn-block">
-                            <div class="edit-btn-container glyphicon">
-                                <a href="#/Releases/edit/{{model.Id}}" class="glyphicon-pencil right-top-btn"></a>
+<div load-screen ls-show="isLoading" ls-class="default-load-screen">
+    <div class="row" id="TheList">
+        <div ng-repeat="model in ctrl.entries()" class="col-lg-4 col-sm-6 list-cell">
+            <div class="list-item">
+                <article>
+                    <a href="#/Releases/{{model.Id}}">
+                        <!--@Html.DisplayFor(model => model.Model.Cover, "Thumbnail", new { @class = "thumb1 album-cover-thumb" })-->
+                        Thumbnail
+                    </a>
+                    <div class="body">
+                        <!--a directive?-->
+                        <div ng-show="isAdminMode">
+                            <div class="edit-btn-block">
+                                <div class="edit-btn-container glyphicon">
+                                    <a href="#/Releases/edit/{{model.Id}}" class="glyphicon-pencil right-top-btn"></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <header>
-                        <!--@Html.ActionLink(Model.Artist.Name, "ByArtist", new { id = Model.ArtistId }, new { @class = "title on-top" })
-                        @*@Html.ActionLink(Model.Artist?.Name, "View", "Artist", new { id = Model.ArtistId }, new { @class = "label invert no-left-pad subtitle on-top" })*@
-                        @Html.ActionLink(Model.Title, "View", new { id = Model.Id }, new { @class = "label-wrap invert no-left-pad subtitle on-top" })-->
-                        <a href="#/Releases/{{model.Id}}">{{model.Title}}</a>
-                        <a href="#/Artists/{{model.Artist.Id}}">{{model.Artist.Name}}</a>
-                    </header>
-                    <div>
-                        <span class="text-muted on-top versions-menu-trigger">
-                            <!--@(Model.OtherVersions.Count > 0 ? " badge" : "" )">-->
-                            {{model.Media.Name}}
+                        <header>
+                            <!--@Html.ActionLink(Model.Artist.Name, "ByArtist", new { id = Model.ArtistId }, new { @class = "title on-top" })
+                            @*@Html.ActionLink(Model.Artist?.Name, "View", "Artist", new { id = Model.ArtistId }, new { @class = "label invert no-left-pad subtitle on-top" })*@
+                            @Html.ActionLink(Model.Title, "View", new { id = Model.Id }, new { @class = "label-wrap invert no-left-pad subtitle on-top" })-->
+                            <a href="#/Releases/{{model.Id}}">{{model.Title}}</a>
+                            <a href="#/Artists/{{model.Artist.Id}}">{{model.Artist.Name}}</a>
+                        </header>
+                        <div>
+                            <span class="text-muted on-top versions-menu-trigger">
+                                <!--@(Model.OtherVersions.Count > 0 ? " badge" : "" )">-->
+                                {{model.Media.Name}}
 
-                            <!--@{
-                                if (Model.OtherVersions.Count > 0)
-                                {
-                                <span class="versions-menu frame">
-                                    @Html.ActionLink($"{Model.Media.Name} ({Model.CatalogueNumber})", "View", new { id = Model.Id }, new { @class = "label2" })
-                                    @foreach (Release item in Model.OtherVersions)
+                                <!--@{
+                                    if (Model.OtherVersions.Count > 0)
                                     {
-                                    @Html.ActionLink($"{item.Media.Name} ({item.CatalogueNumber})", "View", new { id = item.Id }, new { @class = "label2" })
+                                    <span class="versions-menu frame">
+                                        @Html.ActionLink($"{Model.Media.Name} ({Model.CatalogueNumber})", "View", new { id = Model.Id }, new { @class = "label2" })
+                                        @foreach (Release item in Model.OtherVersions)
+                                        {
+                                        @Html.ActionLink($"{item.Media.Name} ({item.CatalogueNumber})", "View", new { id = item.Id }, new { @class = "label2" })
+                                        }
+                                    </span>
                                     }
-                                </span>
-                                }
-                            }-->
+                                }-->
 
-                        </span>
-                        <span class="text-muted on-top">{{model.CatalogueNumber}}</span>
+                            </span>
+                            <span class="text-muted on-top">{{model.CatalogueNumber}}</span>
+                        </div>
+                        <p class="summary">
+                            Some text here...
+                            <!--@if (String.IsNullOrWhiteSpace(Model.Text) == false)
+                            {
+                            @Html.ActionLink(Model.Text, "View", "Release", new { id = Model.Id }, new { @class = "default-text-style" })
+                            }-->
+                        </p>
                     </div>
-                    <p class="summary">
-                        Some text here...
-                        <!--@if (String.IsNullOrWhiteSpace(Model.Text) == false)
-                        {
-                        @Html.ActionLink(Model.Text, "View", "Release", new { id = Model.Id }, new { @class = "default-text-style" })
-                        }-->
-                    </p>
-                </div>
-            </article>
-            <a href="#/Releases/{{model.Id}}">
-                <div class="list-item-front-panel"></div>
-            </a>
+                </article>
+                <a href="#/Releases/{{model.Id}}">
+                    <div class="list-item-front-panel"></div>
+                </a>
+            </div>
         </div>
     </div>
 </div>

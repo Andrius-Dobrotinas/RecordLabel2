@@ -1,25 +1,31 @@
 ﻿"use strict";
 
 angular.module("RecordLabel").controller("ReleaseListCtrl",
-    ["$scope", "releasesService", "batchedListSvc",
-    function ReleaseListCtrl($scope, releasesService, batchedListSvc) {
-        var ctrl = this;
-        
-        var svc = batchedListSvc(releasesService, $scope.settings.ItemsPerPage);
-        
-        ctrl.entries = function () {
-            return svc.entries;
-        }
+    ["$scope", "releasesService", "batchedListSvc", "stateSvc",
+    function ReleaseListCtrl($scope, releasesService, batchedListSvc, stateSvc) {
 
-        ctrl.moreItemsAvailable = function () {
+    var ctrl = this;
+
+    stateSvc.setState(true);
+
+    var svc = batchedListSvc(releasesService, $scope.settings.ItemsPerPage);
+    svc.promise.$promise.finally(function () {
+        stateSvc.setState(false);
+    });
+
+    ctrl.entries = function () {
+        return svc.entries;
+    }
+
+    ctrl.moreItemsAvailable = function () {
             return svc.moreItemsAvailable;
-        }
+    }
 
-        ctrl.isLoading = function() {
+    ctrl.isLoading = function () {
             return !svc.promise.$resolved;
-        }
+    }
 
-        ctrl.loadMore = function () {
+    ctrl.loadMore = function () {
             svc.loadMore();
         }
     }

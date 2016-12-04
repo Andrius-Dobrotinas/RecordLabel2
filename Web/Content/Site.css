@@ -32,3 +32,8 @@ textarea {
 input.ng-invalid.ng-dirty {
     background-color: peachpuff;
 }
+
+/*TEMPORARY (for load-screen in ReleaseView.html)*/
+.default-load-screen {
+    background-color: white;
+}

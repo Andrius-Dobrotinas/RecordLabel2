@@ -83,9 +83,13 @@
     <Content Include="Angular\application.js" />
     <Content Include="Angular\directives\loaderButton\loaderButton.js" />
     <Content Include="Angular\directives\loaderButton\loaderButton.html" />
+    <Content Include="Angular\directives\loadScreen\loadScreen.css" />
+    <Content Include="Angular\directives\loadScreen\loadScreen.html" />
+    <Content Include="Angular\directives\loadScreen\loadScreen.js" />
     <Content Include="Angular\directives\modalBox\modalBox.js" />
     <Content Include="Angular\directives\modalBox\modalBox.html" />
     <Content Include="Angular\services\batchedListSvc.js" />
+    <Content Include="Angular\services\stateSvc.js" />
     <Content Include="Angular\services\services.js" />
     <Content Include="Angular\services\resourceServices.js" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -93,6 +97,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\loader.gif" />
+    <Content Include="Content\Images\loader2.gif" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />

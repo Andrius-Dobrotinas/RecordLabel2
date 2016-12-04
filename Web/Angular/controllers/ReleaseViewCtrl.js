@@ -1,8 +1,10 @@
 ﻿"use strict";
 
 angular.module("RecordLabel").controller("ReleaseViewCtrl",
-    ["$scope", "$routeParams", "$sce", "releasesService", "resourceErrorHandler",
-    function ReleaseViewCtrl($scope, $routeParams, $sce, releasesService, resourceErrorHandler) {
+    ["$scope", "$routeParams", "$sce", "releasesService", "resourceErrorHandler", "stateSvc",
+    function ReleaseViewCtrl($scope, $routeParams, $sce, releasesService, resourceErrorHandler, stateSvc) {
+
+        stateSvc.setState(true);
 
         var takeCareOfResponse = function (data) {
             var model = data.Release
@@ -18,6 +20,9 @@ angular.module("RecordLabel").controller("ReleaseViewCtrl",
             $scope.model = model;
         }
 
-        resourceErrorHandler(releasesService.get($routeParams)).$promise.then(takeCareOfResponse);
+        resourceErrorHandler(releasesService.get($routeParams)).$promise.then(takeCareOfResponse)
+        .finally(function () {
+            stateSvc.setState(false);
+        });
     }
 ]);

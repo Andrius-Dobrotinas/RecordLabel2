@@ -26,6 +26,7 @@ angular.module("RecordLabel", ["ngRoute", "ngResource"])
     .run(["$rootScope", "metadataService", "infoMsgService", function ($rootScope, metadataService, infoMsgService) {
         $rootScope.errors = [];
         $rootScope.infoMessage;
+        $rootScope.isLoading = false;
 
         // Populate global metadata list because we'll need it a lot
         $rootScope.metadataList = metadataService.query();
