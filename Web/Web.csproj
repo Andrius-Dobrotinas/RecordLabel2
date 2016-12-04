@@ -83,8 +83,9 @@
     <Content Include="Angular\application.js" />
     <Content Include="Angular\directives\modalBox\modalBox.js" />
     <Content Include="Angular\directives\modalBox\modalBox.html" />
-    <Content Include="Angular\services\Services.js" />
-    <Content Include="Angular\services\ResourceServices.js" />
+    <Content Include="Angular\services\batchedListSvc.js" />
+    <Content Include="Angular\services\services.js" />
+    <Content Include="Angular\services\resourceServices.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

@@ -4,7 +4,8 @@ angular.module("RecordLabel", ["ngRoute", "ngResource"])
     .config(function ($routeProvider) {
         $routeProvider.when("/Releases", {
             templateUrl: "Angular/templates/ReleaseList.html",
-            controller: "ReleaseListCtrl"
+            controller: "ReleaseListCtrl",
+            controllerAs: "ctrl"
         })
         .when("/Releases/new", {
             templateUrl: "Angular/templates/ReleaseEdit.html",
@@ -46,5 +47,7 @@ angular.module("RecordLabel", ["ngRoute", "ngResource"])
             $rootScope.errors.length = 0;
             infoMsgService.changeLocation();
         });
+
+        $rootScope.isAdminMode = true;
     }
 ]);

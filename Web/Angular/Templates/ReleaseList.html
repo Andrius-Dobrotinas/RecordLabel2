@@ -12,7 +12,7 @@
 </div>
 
 <div class="row" id="TheList">
-    <div ng-repeat="model in entries" class="col-lg-4 col-sm-6 list-cell">
+    <div ng-repeat="model in ctrl.entries()" class="col-lg-4 col-sm-6 list-cell">
         <div class="list-item">
             <article>
                 <a href="#/Releases/{{model.Id}}">
@@ -73,4 +73,6 @@
     </div>
 </div>
 
-<!--Html.LoadMoreBar(ViewData.GetValue<int>("ItemCount"), ViewData.GetValueNullable<int>("SourceId"))-->
+<div ng-show="ctrl.moreItemsAvailable()" >
+    <div class="btn btn-default" ng-click="ctrl.loadMore()">Load More</div>
+</div>
