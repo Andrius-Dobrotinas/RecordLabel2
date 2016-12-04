@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AndrewD.RecordLabel.Data.EF.Access
 {
-    public class RepositoryProxy : IRepositoryProxy
+    public class ReleaseService : IReleaseService
     {
         private IRepository repository;
         private EntityToModelTransformer entityTransformer;
@@ -13,7 +13,7 @@ namespace AndrewD.RecordLabel.Data.EF.Access
         private Func<int, int, int> CalculateBatchCount = 
             (total, perPage) => (int)Math.Ceiling((decimal)total / (decimal)perPage);
 
-        public RepositoryProxy()
+        public ReleaseService()
         {
             // TODO: DI these guys
             repository = new Repository();

@@ -10,12 +10,12 @@ namespace AndrewD.RecordLabel.Web
 {
     public class ArtistsController : ApiController
     {
-        private IRepositoryProxy repository;
+        private IReleaseService repository;
 
         public ArtistsController()
         {
             // TODO: DI
-            repository = new Data.EF.Access.RepositoryProxy();
+            repository = new Data.EF.Access.ReleaseService();
         }
 
         protected override void Dispose(bool disposing)

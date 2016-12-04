@@ -48,7 +48,7 @@
     <Compile Include="EntityToModelTransformer.cs" />
     <Compile Include="ModelToEntityTransformer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryProxy.cs" />
+    <Compile Include="ReleaseService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

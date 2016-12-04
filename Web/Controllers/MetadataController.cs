@@ -10,13 +10,13 @@ namespace AndrewD.RecordLabel.Web
 {
     public class MetadataController : ApiController
     {
-        private IRepositoryProxy repository;
+        private IReleaseService repository;
         private Data.EF.Access.EntityToModelTransformer transformer;
 
         public MetadataController()
         {
             // TODO: DI
-            repository = new Data.EF.Access.RepositoryProxy();
+            repository = new Data.EF.Access.ReleaseService();
             transformer = new Data.EF.Access.EntityToModelTransformer();
         }
 

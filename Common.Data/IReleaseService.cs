@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AndrewD.RecordLabel.Data
 {
-    public interface IRepositoryProxy : IDisposable
+    public interface IReleaseService : IDisposable
     {
         Release GetReleaseComplete(int id);
         ReleaseSlim GetReleaseSlim(int id);

@@ -38,7 +38,7 @@
     <Compile Include="BatchedResult.cs" />
     <Compile Include="DelegateTypes.cs" />
     <Compile Include="IQueryableExtensions.cs" />
-    <Compile Include="IRepositoryProxy.cs" />
+    <Compile Include="IReleaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

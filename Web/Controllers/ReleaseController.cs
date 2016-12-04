@@ -11,7 +11,7 @@ namespace AndrewD.RecordLabel.Web
 {
     public class ReleaseController : ApiController
     {
-        private IRepositoryProxy repository;
+        private IReleaseService repository;
 
         // TODO: make this DI'able
         private Validators.ICustomModelValidator<ReleaseSlim> _modelValidator;
@@ -26,7 +26,7 @@ namespace AndrewD.RecordLabel.Web
         public ReleaseController()
         {
             // TODO: DI
-            repository = new Data.EF.Access.RepositoryProxy();
+            repository = new Data.EF.Access.ReleaseService();
         }
 
         protected override void Dispose(bool disposing)

@@ -10,12 +10,12 @@ namespace AndrewD.RecordLabel.Web
 {
     public class MediaTypesController : ApiController
     {
-        private IRepositoryProxy repository;
+        private IReleaseService repository;
 
         public MediaTypesController()
         {
             // TODO: DI
-            repository = new Data.EF.Access.RepositoryProxy();
+            repository = new Data.EF.Access.ReleaseService();
         }
 
         protected override void Dispose(bool disposing)
