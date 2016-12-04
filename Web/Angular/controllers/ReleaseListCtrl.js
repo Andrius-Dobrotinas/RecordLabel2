@@ -15,6 +15,10 @@ angular.module("RecordLabel").controller("ReleaseListCtrl",
             return svc.moreItemsAvailable;
         }
 
+        ctrl.isLoading = function() {
+            return !svc.promise.$resolved;
+        }
+
         ctrl.loadMore = function () {
             svc.loadMore();
         }
