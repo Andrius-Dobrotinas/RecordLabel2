@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperModels", "SuperModels\SuperModels.csproj", "{773DC2A4-24D7-493C-A2A5-B8FD0BAFDA51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryProxy", "RepositoryProxy\RepositoryProxy.csproj", "{3659C0CA-D903-4CBF-9004-1C0CC61DC946}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReleaseService", "ReleaseService\ReleaseService.csproj", "{3659C0CA-D903-4CBF-9004-1C0CC61DC946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryProxyTests", "RepositoryProxyTests\RepositoryProxyTests.csproj", "{26833DA5-CC9D-42FA-944A-0FC4058B178F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReleaseServiceTests", "ReleaseServiceTests\ReleaseServiceTests.csproj", "{26833DA5-CC9D-42FA-944A-0FC4058B178F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{F8FEDC8A-3BF1-4E1B-A430-B54004844E1A}"
 EndProject

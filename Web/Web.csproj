@@ -177,9 +177,9 @@
       <Project>{08EF2F92-6760-4BC2-B593-3D320E494078}</Project>
       <Name>ReleaseContext</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RepositoryProxy\RepositoryProxy.csproj">
+    <ProjectReference Include="..\ReleaseService\ReleaseService.csproj">
       <Project>{3659c0ca-d903-4cbf-9004-1c0cc61dc946}</Project>
-      <Name>RepositoryProxy</Name>
+      <Name>ReleaseService</Name>
     </ProjectReference>
     <ProjectReference Include="..\SuperModels\SuperModels.csproj">
       <Project>{773dc2a4-24d7-493c-a2a5-b8fd0bafda51}</Project>

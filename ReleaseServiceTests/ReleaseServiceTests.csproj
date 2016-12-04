@@ -62,9 +62,9 @@
       <Project>{52fceeb9-5f69-419d-b4c3-eb173f5c81ca}</Project>
       <Name>Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RepositoryProxy\RepositoryProxy.csproj">
+    <ProjectReference Include="..\ReleaseService\ReleaseService.csproj">
       <Project>{3659c0ca-d903-4cbf-9004-1c0cc61dc946}</Project>
-      <Name>RepositoryProxy</Name>
+      <Name>ReleaseService</Name>
     </ProjectReference>
     <ProjectReference Include="..\SuperModels\SuperModels.csproj">
       <Project>{773dc2a4-24d7-493c-a2a5-b8fd0bafda51}</Project>
