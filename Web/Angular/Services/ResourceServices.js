@@ -7,7 +7,7 @@ application.factory("metadataService", ["$resource", function ($resource) {
 }]);
 
 application.factory("releasesService", ["$resource", function ($resource) {
-    return $resource("/api/Release/:act", {}, {
+    return $resource("/api/Release/:act/:id", { id: "@id", size: "@size", batch: "@batch" }, {
         get: { method: "GET", params: { act: "Get" } },
         queryBatch: { method: "GET", params: { act: "GetBatch" } },
         getForEdit: { method: "GET", params: { act: "GetForEdit" } },
