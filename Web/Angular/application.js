@@ -4,12 +4,13 @@
 
     angular.module("RecordLabel", ["ngRoute", "ngResource"])
         .config(function ($routeProvider) {
+            $routeProvider.caseInsensitiveMatch = true;
             $routeProvider.when("/Releases", {
                 templateUrl: "Angular/templates/ReleaseList.html",
                 controller: "ReleaseListCtrl",
                 controllerAs: "ctrl"
             })
-            .when("/Releases/new", {
+            .when("/Releases/New", {
                 templateUrl: "Angular/templates/ReleaseEdit.html",
                 controller: "ReleaseEditCtrl"
             })
@@ -17,13 +18,13 @@
                 templateUrl: "Angular/templates/ReleaseView.html",
                 controller: "ReleaseViewCtrl"
             })
-            .when("/Releases/edit/:id", {
+            .when("/Releases/Edit/:id", {
                 templateUrl: "Angular/templates/ReleaseEdit.html",
                 controller: "ReleaseEditCtrl"
             })
             .otherwise({
                 redirectTo: "/Releases"
-            })
+            }) 
         })
         .run(["$rootScope", "metadataService", "infoMsgService", function ($rootScope, metadataService, infoMsgService) {
             $rootScope.errors = [];
@@ -41,7 +42,7 @@
             // Synchronous call to get settings. Settings must be retrieved before any other requests are be made
             // because they contain ItemsPerPage param.
             $.ajax({
-                url: "api/Settings/Get",
+                url: "api/settings/get",
                 async: false
             }).done(function (data) {
                 $rootScope.settings.itemsPerPage = data.itemsPerPage;
