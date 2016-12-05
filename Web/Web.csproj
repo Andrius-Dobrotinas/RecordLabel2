@@ -133,14 +133,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\Settings.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="ModelTransformers\ReleaseViewModelTransformer.cs" />
     <Compile Include="Controllers\ArtistsController.cs" />
     <Compile Include="Controllers\ConstantsController.cs" />
     <Compile Include="Controllers\MediaTypesController.cs" />
     <Compile Include="Controllers\MetadataController.cs" />
-    <Compile Include="Controllers\ReleaseController.cs" />
+    <Compile Include="Controllers\ReleasesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

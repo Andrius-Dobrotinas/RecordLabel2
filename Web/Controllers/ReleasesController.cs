@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace AndrewD.RecordLabel.Web
 {
-    public class ReleaseController : ApiController
+    public class ReleasesController : ApiController
     {
         private IReleaseService repository;
 
@@ -23,7 +23,7 @@ namespace AndrewD.RecordLabel.Web
             }
         }
 
-        public ReleaseController()
+        public ReleasesController()
         {
             // TODO: DI
             repository = new Data.EF.Access.ReleaseService();
@@ -44,15 +44,15 @@ namespace AndrewD.RecordLabel.Web
             return Ok(model);
         }
 
-        public IHttpActionResult GetBatch(int batch)
+        public IHttpActionResult GetBatch(int number)
         {
-            return GetBatch(batch, 0);
+            return GetBatch(number, 0);
         }
 
-        public IHttpActionResult GetBatch(int batch, int size)
+        public IHttpActionResult GetBatch(int number, int size)
         {
             if (size == 0) size = Settings.ItemsPerPage;
-            var model = repository.GetReleases(batch, size);
+            var model = repository.GetReleases(number, size);
             return Ok(model);
         }
 

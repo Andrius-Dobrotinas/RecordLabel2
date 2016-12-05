@@ -13,7 +13,7 @@ application.factory("batchedListSvc", ["resourceErrorHandler", function (resourc
             this.loadMore = function () {
                 svc.promise = resourceErrorHandler(resourceService.queryBatch(
                 {
-                    batch: ++svc.currentBatch,
+                    number: ++svc.currentBatch,
                     size: itemsPerPage
                 }));
 
