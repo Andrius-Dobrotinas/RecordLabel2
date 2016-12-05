@@ -1,16 +1,18 @@
 ﻿"use strict";
 
-var application = angular.module("RecordLabel");
+(function () {
 
-application.directive("loadScreen", function () {
-    return {
-        restrict: "A",
-        replace: true,
-        transclude: true,
-        templateUrl: "Angular/directives/loadScreen/loadScreen.html",
-        scope: {
-            show: "&lsShow",
-            class: "@lsClass"
+    angular.module("RecordLabel").directive("loadScreen", function () {
+        return {
+            restrict: "A",
+            replace: true,
+            transclude: true,
+            templateUrl: "Angular/directives/loadScreen/loadScreen.html",
+            scope: {
+                show: "&lsShow",
+                class: "@lsClass"
+            }
         }
-    }
-});
+    });
+
+})();

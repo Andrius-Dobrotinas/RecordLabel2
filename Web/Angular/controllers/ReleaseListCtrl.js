@@ -1,32 +1,35 @@
 ﻿"use strict";
 
-angular.module("RecordLabel").controller("ReleaseListCtrl",
-    ["$scope", "releasesService", "batchedListSvc", "stateSvc",
-    function ReleaseListCtrl($scope, releasesService, batchedListSvc, stateSvc) {
+(function () {
 
-    var ctrl = this;
+    angular.module("RecordLabel").controller("ReleaseListCtrl",
+        ["$scope", "releasesService", "batchedListSvc", "stateSvc",
+        function ReleaseListCtrl($scope, releasesService, batchedListSvc, stateSvc) {
 
-    stateSvc.setState(true);
+            var ctrl = this;
 
-    var svc = batchedListSvc(releasesService, $scope.settings.itemsPerPage);
-    svc.promise.$promise.finally(function () {
-        stateSvc.setState(false);
-    });
+            stateSvc.setState(true);
 
-    ctrl.entries = function () {
-        return svc.entries;
-    }
+            var svc = batchedListSvc(releasesService, $scope.settings.itemsPerPage);
+            svc.promise.$promise.finally(function () {
+                stateSvc.setState(false);
+            });
 
-    ctrl.moreItemsAvailable = function () {
-            return svc.moreItemsAvailable;
-    }
+            ctrl.entries = function () {
+                return svc.entries;
+            }
 
-    ctrl.isLoading = function () {
-            return !svc.promise.$resolved;
-    }
+            ctrl.moreItemsAvailable = function () {
+                return svc.moreItemsAvailable;
+            }
 
-    ctrl.loadMore = function () {
-            svc.loadMore();
-        }
-    }
-]);
+            ctrl.isLoading = function () {
+                return !svc.promise.$resolved;
+            }
+
+            ctrl.loadMore = function () {
+                svc.loadMore();
+            }
+        }]);
+
+})();
