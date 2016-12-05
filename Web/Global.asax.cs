@@ -15,6 +15,8 @@ namespace AndrewD.RecordLabel.Web
             GlobalConfiguration.Configure(WebApiConfig.Register);
             Settings.InitSettings();
 
+            GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+
             System.Data.Entity.Database.SetInitializer(new Data.EF.Configuration.DropAndSeedOnChanges<ReleaseContext>());
             //System.Data.Entity.Database.SetInitializer(new Data.EF.Configuration.DropAndSeedAlways<ReleaseContext>());
         }

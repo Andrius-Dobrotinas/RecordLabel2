@@ -7,13 +7,14 @@ angular.module("RecordLabel").controller("ReleaseViewCtrl",
         stateSvc.setState(true);
 
         var takeCareOfResponse = function (data) {
-            var model = data.Release
-            model.YoutubeReferences = data.YoutubeReferences;
+            var model = data.release
+            model.youtubeReferences = data.youtubeReferences;
 
-            // Fix youtube links for use with iFrame. TODO: probably convert to a service?
-            if (model.YoutubeReferences) {
-                model.YoutubeReferences.forEach(function (reference) {
-                    reference.Target = $sce.trustAsResourceUrl(reference.Target)
+            // TODO: probably convert to a service?
+            // Fix youtube links for use with iFrame.
+            if (model.youtubeReferences) {
+                model.youtubeReferences.forEach(function (reference) {
+                    reference.target = $sce.trustAsResourceUrl(reference.target)
                 })
             }
 

@@ -31,8 +31,9 @@ angular.module("RecordLabel", ["ngRoute", "ngResource"])
         // Populate global metadata list because we'll need it a lot
         $rootScope.metadataList = metadataService.query();
 
+        // Default settings, in case ajax request for settings doesn't come through
         $rootScope.settings = {
-            ItemsPerPage: 10  // Default setting
+            itemsPerPage: 10
         };
 
         // Synchronous call to get settings. Settings must be retrieved before any other requests are be made
@@ -41,7 +42,7 @@ angular.module("RecordLabel", ["ngRoute", "ngResource"])
             url: "api/Settings/Get",
             async: false
         }).done(function (data) {
-            $rootScope.settings.ItemsPerPage = data.ItemsPerPage;
+            $rootScope.settings.itemsPerPage = data.itemsPerPage;
         });
 
         $rootScope.$on('$locationChangeStart', function (event) {
@@ -49,6 +50,7 @@ angular.module("RecordLabel", ["ngRoute", "ngResource"])
             infoMsgService.changeLocation();
         });
 
+        // TODO: temporary until I implement the whole thing
         $rootScope.isAdminMode = true;
     }
 ]);

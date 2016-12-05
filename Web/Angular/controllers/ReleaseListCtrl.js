@@ -8,7 +8,7 @@ angular.module("RecordLabel").controller("ReleaseListCtrl",
 
     stateSvc.setState(true);
 
-    var svc = batchedListSvc(releasesService, $scope.settings.ItemsPerPage);
+    var svc = batchedListSvc(releasesService, $scope.settings.itemsPerPage);
     svc.promise.$promise.finally(function () {
         stateSvc.setState(false);
     });

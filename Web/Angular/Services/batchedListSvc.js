@@ -18,8 +18,8 @@ application.factory("batchedListSvc", ["resourceErrorHandler", function (resourc
                 }));
 
                 svc.promise.$promise.then(function (data) {
-                    svc.entries = svc.entries.concat(data.Entries);
-                    svc.batchesLeft = data.BatchCount - svc.currentBatch;
+                    svc.entries = svc.entries.concat(data.entries);
+                    svc.batchesLeft = data.batchCount - svc.currentBatch;
                     svc.moreItemsAvailable = svc.batchesLeft > 0;
                 });
             }

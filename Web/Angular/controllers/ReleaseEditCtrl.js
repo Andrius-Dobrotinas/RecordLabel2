@@ -18,8 +18,8 @@ angular.module("RecordLabel").controller("ReleaseEditCtrl",
 
             // Set Release template Artist and MediaType Ids to null in order for Select element validations to work
             $scope.model.$promise.then(function (data) {
-                data.ArtistId = null;
-                data.MediaId = null;
+                data.artistId = null;
+                data.mediaId = null;
             })
         }
 
@@ -42,19 +42,19 @@ angular.module("RecordLabel").controller("ReleaseEditCtrl",
         }
 
         $scope.addReference = function () {
-            $scope.model.References.push(angular.copy($scope.constants.DefaultReference));
+            $scope.model.references.push(angular.copy($scope.constants.defaultReference));
         }
 
         $scope.deleteReference = function (index) {
-            $scope.model.References.splice(index, 1);
+            $scope.model.references.splice(index, 1);
         }
 
         $scope.addTrack = function () {
-            $scope.model.Tracks.push(angular.copy($scope.constants.DefaultTrack));
+            $scope.model.tracks.push(angular.copy($scope.constants.defaultTrack));
         }
 
         $scope.deleteTrack = function (index) {
-            $scope.model.Tracks.splice(index, 1);
+            $scope.model.tracks.splice(index, 1);
         }
 
         // Checks if a field has invalid value
