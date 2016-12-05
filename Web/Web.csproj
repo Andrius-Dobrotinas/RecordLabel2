@@ -80,7 +80,7 @@
     <Content Include="Angular\controllers\ReleaseEditCtrl.js" />
     <Content Include="Angular\controllers\ReleaseListCtrl.js" />
     <Content Include="Angular\controllers\ReleaseViewCtrl.js" />
-    <Content Include="Angular\application.js" />
+    <Content Include="Angular\applications.js" />
     <Content Include="Angular\directives\loaderButton\loaderButton.js" />
     <Content Include="Angular\directives\loaderButton\loaderButton.html" />
     <Content Include="Angular\directives\loadScreen\loadScreen.css" />
