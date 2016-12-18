@@ -11,16 +11,10 @@ namespace AndrewD.RecordLabel.Web
     {
         public IHttpActionResult Get()
         {
-            // TODO: move this object to a global static variable because these objects don't change at runtime
-            var ReferenceTypeEnum = (from object item in typeof(ReferenceType).GetEnumValues()
-                                     select new { Id = (int)item, Text = item.ToString() })
-                .ToArray().ToDictionary(x => x.Text, x => x.Id);
-            
             return Ok(new
             {
                 PrintStatuses = GetEnumArray<PrintStatus>(),
                 ReferenceTypes = GetEnumArray<ReferenceType>(),
-                ReferenceTypeEnum = ReferenceTypeEnum,
 
                 DefaultReference = new Reference(),
                 DefaultTrack = new Track(),
