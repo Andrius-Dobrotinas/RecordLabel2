@@ -19,7 +19,7 @@
     }]);
 
     application.factory("constantsService", ["$resource", function ($resource) {
-        return $resource("/api/constants/:act", { id: "@id" }, {
+        return $resource("/api/constants/:act", { }, {
             get: { method: "GET", params: { act: "get" }, cache: true },
         });
     }]);
@@ -32,7 +32,9 @@
     }]);
 
     application.factory("mediaTypesService", ["$resource", function ($resource) {
-        return $resource("/api/mediatypes/:act");
+        return $resource("/api/mediatypes/:act", {}, {
+            query: { method: "GET", params: { act: "get" }, isArray: true }
+        });
     }]);
 
 })();
