@@ -7,7 +7,7 @@
             restrict: "A",
             replace: true,
             transclude: true,
-            templateUrl: "Angular/directives/loadScreen/loadScreen.html",
+            templateUrl: "Angular/directives/load-screen/load-screen.html",
             scope: {
                 show: "&lsShow",
                 class: "@lsClass"

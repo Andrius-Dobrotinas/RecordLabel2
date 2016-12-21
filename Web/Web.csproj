@@ -77,21 +77,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Angular\controllers\ReleaseEditCtrl.js" />
-    <Content Include="Angular\controllers\ReleaseListCtrl.js" />
-    <Content Include="Angular\controllers\ReleaseViewCtrl.js" />
+    <Content Include="Angular\controllers\releases\edit.js" />
+    <Content Include="Angular\controllers\releases\list.js" />
+    <Content Include="Angular\controllers\releases\view.js" />
     <Content Include="Angular\application.js" />
-    <Content Include="Angular\directives\loaderButton\loaderButton.js" />
-    <Content Include="Angular\directives\loaderButton\loaderButton.html" />
-    <Content Include="Angular\directives\loadScreen\loadScreen.css" />
-    <Content Include="Angular\directives\loadScreen\loadScreen.html" />
-    <Content Include="Angular\directives\loadScreen\loadScreen.js" />
-    <Content Include="Angular\directives\modalBox\modalBox.js" />
-    <Content Include="Angular\directives\modalBox\modalBox.html" />
-    <Content Include="Angular\services\batchedListSvc.js" />
-    <Content Include="Angular\services\stateSvc.js" />
-    <Content Include="Angular\services\services.js" />
-    <Content Include="Angular\services\resourceServices.js" />
+    <Content Include="Angular\directives\loader-button\loader-button.js" />
+    <Content Include="Angular\directives\loader-button\loader-button.html" />
+    <Content Include="Angular\directives\load-screen\load-screen.css" />
+    <Content Include="Angular\directives\load-screen\load-screen.html" />
+    <Content Include="Angular\directives\load-screen\load-screen.js" />
+    <Content Include="Angular\directives\modal-box\modal-box.js" />
+    <Content Include="Angular\directives\modal-box\modal-box.html" />
+    <Content Include="Angular\routes.config.js" />
+    <Content Include="Angular\services\batched-list.svc.js" />
+    <Content Include="Angular\services\info-msg.svc.js" />
+    <Content Include="Angular\services\resource-post.svc.js" />
+    <Content Include="Angular\services\state.svc.js" />
+    <Content Include="Angular\services\resource-error-handler.svc.js" />
+    <Content Include="Angular\services\resource-services.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -101,9 +104,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
-    <Content Include="Angular\templates\ReleaseEdit.html" />
-    <Content Include="Angular\templates\ReleaseList.html" />
-    <Content Include="Angular\templates\ReleaseView.html" />
+    <Content Include="Angular\controllers\releases\edit.html" />
+    <Content Include="Angular\controllers\releases\list.html" />
+    <Content Include="Angular\controllers\releases\view.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-resource.js" />
     <Content Include="Scripts\angular-resource.min.js" />

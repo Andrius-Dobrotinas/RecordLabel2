@@ -6,7 +6,7 @@
         return {
             restrict: "A",
             replace: true,
-            templateUrl: "Angular/directives/loaderButton/loaderButton.html",
+            templateUrl: "Angular/directives/loader-button/loader-button.html",
             scope: {
                 text: "@lbtnText",
                 busy: "&lbtnIsBusy",

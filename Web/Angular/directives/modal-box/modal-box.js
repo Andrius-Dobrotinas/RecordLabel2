@@ -10,7 +10,7 @@
                 body: "modalBoxBody",
                 buttons: "?modalBoxButtons"
             },
-            templateUrl: "Angular/directives/modalBox/modalBox.html",
+            templateUrl: "Angular/directives/modal-box/modal-box.html",
             scope: {
                 id: "@modalId",
                 title: "@modalTitle",

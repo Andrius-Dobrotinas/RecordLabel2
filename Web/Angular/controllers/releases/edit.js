@@ -3,8 +3,8 @@
 (function () {
 
     angular.module("RecordLabel").controller("ReleaseEditCtrl",
-        ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService", "resourceErrorHandler", "modelPostResourceService",
-        function ReleaseEditCtrl($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler, modelPostResourceService) {
+        ["$scope", "$routeParams", "releasesService", "artistsService", "mediaTypesService", "constantsService", "resourceErrorHandler", "resourcePostSvc",
+        function ReleaseEditCtrl($scope, $routeParams, releasesService, artistsService, mediaTypesService, constantsService, resourceErrorHandler, resourcePostSvc) {
             var ctrl = this;
             ctrl.isNew = $routeParams.id ? false : true;
 
@@ -34,10 +34,10 @@
                 if (form.$valid) {
                     $scope.validationErrors.length = 0;
                     if (ctrl.isNew) {
-                        modelPostResourceService(releasesService.create($scope.model), "/Releases", $scope.validationErrors);
+                        resourcePostSvc(releasesService.create($scope.model), "/Releases", $scope.validationErrors);
                     }
                     else {
-                        modelPostResourceService(releasesService.update($scope.model), "/Releases", $scope.validationErrors);
+                        resourcePostSvc(releasesService.update($scope.model), "/Releases", $scope.validationErrors);
                     }
                 } else {
                     $scope.errors.push({ statusText: "Data cannot be submitted because there are validation errors!" });
