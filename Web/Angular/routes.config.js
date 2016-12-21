@@ -3,7 +3,7 @@
 (function () {
 
     angular.module("RecordLabel")
-        .config(function ($routeProvider) {
+        .config(function ($routeProvider, $locationProvider) {
             $routeProvider.caseInsensitiveMatch = true;
             $routeProvider.when("/Releases", {
                 templateUrl: "Angular/controllers/releases/list.html",
@@ -24,7 +24,10 @@
             })
             .otherwise({
                 redirectTo: "/Releases"
-            })
+            });
+
+            // To remove the exclamation mark after the # sign
+            $locationProvider.hashPrefix("");
         });
 
 })();
