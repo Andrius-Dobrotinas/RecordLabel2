@@ -79,6 +79,7 @@
   <ItemGroup>
     <Content Include="Angular\content\images\loader.gif" />
     <Content Include="Angular\content\images\loader2.gif" />
+    <Content Include="Angular\content\images\record.png" />
     <Content Include="Angular\content\site.css" />
     <Content Include="Angular\controllers\releases\edit.js" />
     <Content Include="Angular\controllers\releases\list.js" />
@@ -91,6 +92,7 @@
     <Content Include="Angular\directives\load-screen\load-screen.js" />
     <Content Include="Angular\directives\modal-box\modal-box.js" />
     <Content Include="Angular\directives\modal-box\modal-box.html" />
+    <Content Include="Angular\Index.html" />
     <Content Include="Angular\routes.config.js" />
     <Content Include="Angular\services\batched-list.svc.js" />
     <Content Include="Angular\services\info-msg.svc.js" />
@@ -98,11 +100,14 @@
     <Content Include="Angular\services\state.svc.js" />
     <Content Include="Angular\services\resource-error-handler.svc.js" />
     <Content Include="Angular\services\resource-services.js" />
+    <Content Include="Angular\content\common.css" />
+    <Content Include="Angular\content\editbuttons.css" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
     <Content Include="Angular\controllers\releases\edit.html" />
     <Content Include="Angular\controllers\releases\list.html" />
     <Content Include="Angular\controllers\releases\view.html" />
+    <Content Include="Angular\controllers\releases\view.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
